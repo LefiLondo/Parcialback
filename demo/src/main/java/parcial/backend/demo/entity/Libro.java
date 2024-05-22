@@ -1,19 +1,25 @@
-package parcial.backend.demo.model;
+package parcial.backend.demo.entity;
+
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
+
+
 @Setter
 @Getter
 @Entity
 @Table
-public class Arrendatario {
+public class Libro  {
+
     @Id
     @SequenceGenerator(
             name = "formulario_sequence",
@@ -24,16 +30,21 @@ public class Arrendatario {
             strategy = GenerationType.SEQUENCE,
             generator = "formulario_sequence"
     )
-    private Long idArrendatario;
-    private String nombres;
-    private String apellidos;
-    private String correoElectronico;
-    private String telefono;
-    private String password;
+    private Long idlibro;
+    private String nombre;
+    private String autor;
+    private String fechadeescritura;
+    private String numerodeedicion;
+    private String precio;
+    private String tipo;
+    private String famaescritor;
 /* 
-    @OneToMany(mappedBy = "arrendatario")
-    private List<SolicitudArriendo> solicitudes;
+/* 
+/* 
+   @OneToMany(mappedBy = "arrendador") 
+    private List<Propiedad> propiedades;*/
 
-    @OneToMany(mappedBy = "arrendatario")
-    private List<Pago> pagos;*/
+    /*  @OneToMany(mappedBy = "arrendador")
+    private List<SolicitudArriendo> solicitudes;
+*/
 }
